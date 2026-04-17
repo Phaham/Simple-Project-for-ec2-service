@@ -10,11 +10,11 @@ pipeline {
     }
 
     stages {
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/Phaham/Simple-Project-for-ec2-service.git'
-            }
-        }
+        // stage('Clone Repo') {
+        //     steps {
+        //         git 'https://github.com/Phaham/Simple-Project-for-ec2-service.git'
+        //     }
+        // }
 
         stage('Install Dependencies') {
             steps {
