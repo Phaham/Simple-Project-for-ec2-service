@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USER = 'Phaham'
+        DOCKERHUB_USER = 'phaham'
         DOCKERHUB_PASSWORD = '1724@Dockerhub@24'
         IMAGE_NAME = 'batch-api'
         IMAGE_TAG = 'v1'
