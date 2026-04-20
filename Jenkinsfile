@@ -58,7 +58,7 @@ pipeline {
             steps {
                 sshagent(['ec2-ssh']) {
                     sh '''
-                    ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP << EOF
+                    ssh -o StrictHostKeyChecking=no ubuntu@3.108.44.203 << EOF
 
                     echo "Stopping old container..."
                     docker stop batch-api-container || true
