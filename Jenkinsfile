@@ -56,23 +56,14 @@ pipeline {
 
         stage('Deploy to EC2') {
             steps {
-                sshagent(['ec2-ssh']) {
+                sshagent(['ec2-key']) {
                     sh '''
-                    ssh -o StrictHostKeyChecking=no ubuntu@3.108.44.203 << EOF
-
-                    echo "Stopping old container..."
-                    docker stop batch-api-container || true
-                    docker rm batch-api-container || true
-
-                    echo "Pulling latest image..."
-                    docker pull phaham/batch-api:v1
-
-                    echo "Running new container..."
-                    docker run -d -p 3000:3000 \
-                      --name batch-api-container \
-                      phaham/batch-api:v1
-
-                    EOF
+                    ssh -o StrictHostKeyChecking=no ubuntu@3.108.44.203 "
+                    docker stop batch-api-container || true &&
+                    docker rm batch-api-container || true &&
+                    docker pull phaham/batch-api:v1 &&
+                    docker run -d -p 3000:3000 --name batch-api-container phaham/batch-api:v1
+                    "
                     '''
                 }
             }
