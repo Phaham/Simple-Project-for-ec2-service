@@ -6,7 +6,6 @@ pipeline {
         DOCKERHUB_PASSWORD = '1724@Dockerhub@24'
         IMAGE_NAME = 'batch-api'
         IMAGE_TAG = 'v1'
-
     }
 
     stages {
@@ -37,6 +36,45 @@ pipeline {
         stage('Push Image') {
             steps {
                 sh 'docker push $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG'
+            }
+        }
+
+        // stage('Deploy to EC2') {
+        //     steps {
+        //         sshagent(['ec2-ssh']) {
+        //             sh '''
+        //             ssh -o StrictHostKeyChecking=no ubuntu@EC2_PUBLIC_IP << EOF
+        //             docker stop batch-api-container || true
+        //             docker rm batch-api-container || true
+        //             docker pull phaham/batch-api:v1
+        //             docker run -d -p 3000:3000 --name batch-api-container phaham/batch-api:v1
+        //             EOF
+        //             '''
+        //         }
+        //     }
+        // }
+
+        stage('Deploy to EC2') {
+            steps {
+                sshagent(['ec2-ssh']) {
+                    sh '''
+                    ssh -o StrictHostKeyChecking=no ubuntu@$EC2_IP << EOF
+
+                    echo "Stopping old container..."
+                    docker stop batch-api-container || true
+                    docker rm batch-api-container || true
+
+                    echo "Pulling latest image..."
+                    docker pull phaham/batch-api:v1
+
+                    echo "Running new container..."
+                    docker run -d -p 3000:3000 \
+                      --name batch-api-container \
+                      phaham/batch-api:v1
+
+                    EOF
+                    '''
+                }
             }
         }
     }
