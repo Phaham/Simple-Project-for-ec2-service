@@ -6,6 +6,3 @@ One real API route like /api/batches returning dummy JSON
 
 
 "CI/CD Implemented!"
-
-Updating Readme for POLL SCM Test!
-Updating Readme for Git SCM Test!
