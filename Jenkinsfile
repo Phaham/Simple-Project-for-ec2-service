@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_USER = 'phaham'
-        DOCKERHUB_PASSWORD = '1724@Dockerhub@24'
+        DOCKERHUB_PASSWORD = '1724@Ubuntu'
         IMAGE_NAME = 'batch-api'
         IMAGE_TAG = 'v1'
     }
