@@ -9,4 +9,6 @@ router.get("/", (req, res) => {
   });
 });
 
+console.log("Version is V2");
+
 module.exports = router;
