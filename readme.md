@@ -7,4 +7,4 @@ One real API route like /api/batches returning dummy JSON
 
 "CI/CD Implemented!"
 
-<!-- GITSCM TESTED -->
+<!-- GITSCM TESTING -->
