@@ -63,7 +63,7 @@ pipeline {
                     docker stop batch-api-container || true &&
                     docker rm batch-api-container || true &&
                     docker pull phaham/batch-api:v1 &&
-                    docker run -d -p 3000:3000 --name batch-api-containerเปิดอภิปราย/batch-api:v1
+                    docker run -d -p 3000:3000 --name batch-api-container phaham/batch-api:v1
                     '
                     """
                 }
