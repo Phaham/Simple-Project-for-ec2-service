@@ -59,7 +59,7 @@ pipeline {
             steps {
                 sshagent(['ec2-ssh']) {
                     sh '''
-                    ssh -o StrictHostKeyChecking=no ubuntu@3.108.44.203 "
+                    ssh -o StrictHostKeyChecking=no ubuntu@13.201.55.60"
                     docker stop batch-api-container || true &&
                     docker rm batch-api-container || true &&
                     docker pull phaham/batch-api:v1 &&
