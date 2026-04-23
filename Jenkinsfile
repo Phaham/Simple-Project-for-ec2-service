@@ -3,7 +3,7 @@
 
 //     environment {
 //         DOCKERHUB_USER = 'phaham'
-//         DOCKERHUB_PASSWORD = '1724@Ubuntu'
+//         DOCKERHUB_PASSWORD = 'my_password'
 //         IMAGE_NAME = 'batch-api'
 //         IMAGE_TAG = 'v1'
 //     }
