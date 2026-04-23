@@ -58,14 +58,14 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 sshagent(['ec2-ssh']) {
-                    sh '''
-                    ssh -o StrictHostKeyChecking=no ubuntu@13.201.55.60"
+                    sh """
+                    ssh -o StrictHostKeyChecking=no ubuntu@13.201.55.60 '
                     docker stop batch-api-container || true &&
                     docker rm batch-api-container || true &&
                     docker pull phaham/batch-api:v1 &&
-                    docker run -d -p 3000:3000 --name batch-api-container phaham/batch-api:v1
-                    "
-                    '''
+                    docker run -d -p 3000:3000 --name batch-api-containerเปิดอภิปราย/batch-api:v1
+                    '
+                    """
                 }
             }
         }
