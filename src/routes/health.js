@@ -9,6 +9,6 @@ router.get("/", (req, res) => {
   });
 });
 
-console.log("Version is V5");
+console.log("Version is V6");
 
 module.exports = router;
