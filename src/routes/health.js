@@ -1,5 +1,7 @@
 const router = require("express").Router();
 
+const passwoord = "Izin@1234"
+
 router.get("/", (req, res) => {
   res.json({
     status:    "ok",
@@ -10,5 +12,15 @@ router.get("/", (req, res) => {
 });
 
 console.log("Version is 11");
+console.log("Version is 11");
+console.log("Version is 11");
+console.log("Version is 11");
+console.log("Version is 11");
+console.log("Version is 11");
+console.log("Version is 11");
+console.log("Version is 11");
+console.log("Version is 11");
+console.log("Version is 11");
+
 
 module.exports = router;
