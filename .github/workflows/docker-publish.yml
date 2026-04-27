@@ -15,10 +15,10 @@ jobs:
   build-push-deploy:
     runs-on: ubuntu-latest
 
-    # strategy:
-    #   matrix:
-    #     os: [ubuntu-latest, macos-latest, windows-latest]
-    #     node-version: [16, 18, 20]
+    strategy:
+      matrix:
+        # os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: [18, 22, 24]
 
     steps:
       - name: Check out code
