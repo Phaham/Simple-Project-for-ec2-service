@@ -16,7 +16,9 @@ console.log("Version is 11");
 console.log("Version is 11");
 console.log("Version is 11");
 
-let abcd = 1234;
+var abcd = 1234;
 abcd = 3456;
+
+var abcd = "phaham";
 
 module.exports = router;
