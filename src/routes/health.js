@@ -1,8 +1,5 @@
 const router = require("express").Router();
 
-const passwoord = "Izin@1234"
-console.log(passwoord);
-
 router.get("/", (req, res) => {
   res.json({
     status:    "ok",
