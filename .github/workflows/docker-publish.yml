@@ -21,10 +21,10 @@ jobs:
     #     node-version: [18, 22, 24]
 
     steps:
-      - name: Install dependencies via Nexus
-        run: |
-          npm config set registry http://13.202.80.56:8081/repository/npm-group/
-          npm install
+      # - name: Install dependencies via Nexus
+      #   run: |
+      #     npm config set registry http://13.202.80.56:8081/repository/npm-group/
+      #     npm install
 
       - name: Check out code
         uses: actions/checkout@v4
