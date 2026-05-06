@@ -9,10 +9,7 @@ router.get("/", (req, res) => {
   });
 });
 
-console.log("Version is 13");
-
-const num = 12
-num =9
+console.log("Version is 14");
 
 
 module.exports = router;
